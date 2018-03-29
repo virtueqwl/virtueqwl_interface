@@ -3,6 +3,7 @@ import unittest, requests
 from common.logger import Log
 
 class MyTestCase(unittest.TestCase):
+    '''获取验证码'''
     log = Log()
 
     def setUp(self):

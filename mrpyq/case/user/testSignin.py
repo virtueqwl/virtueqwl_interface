@@ -17,7 +17,7 @@ class SignInTestCase(unittest.TestCase):
 
         self.url = "https://testapi.mrpyq.com/member/signin"
         self.url2 = "https://testapi.mrpyq.com/mission/daily/signin"
-
+        # 12345678900
         self.data = {"access_token": "5aaa48281893be6a5ceee5fb.1552805711.144a99fcf0051bfdbe6178e6f0afa2aa", "userid": "55040c10fbe78e5c14de4aa5"}
         self.data2 = {"access_token": "5aaa48281893be6a5ceee5fb.1552805711.144a99fcf0051bfdbe6178e6f0afa2aa"}
 
