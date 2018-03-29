@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>自动化测试报告,测试结果如下：</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>自动化测试报告,测试结果如下：</h1>
+<p class='attribute'><strong>Start Time:</strong> 2018-03-15 17:14:37</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:05.653000</p>
+<p class='attribute'><strong>Status:</strong> Pass 14</p>
+
+<p class='description'>用例执行情况：</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>home_TestCase.testPulldown.PulldownTestCase: 首页</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testPulldown: 测试下拉数据刷新</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: [2018-03-15 17:14:37,273] - logger.py] - INFO: æ§è¡ä¸æå·æ°
+{u'count': 10, u'pagemore': True, u'room': {u'admin_apply_url': u'http://www.mrpyq.com', u'stat': {u'apply_user': 2}, u'short': u'\u539f\u670b\u53cb\u5708', u'description': u'\u670b\u53cb\u5708\u5927\u6742\u70e9\uff0c\u7545\u6240\u6b32\u8a00\uff0c\u7cbe\u5f69\u6bb5\u5b50\u770b\u4f60\u7684~', u'hot_subrooms': [{u'_id': u'5940cfa61893be1a80f8c97d', u'headimg': u'', u'name': u'\u6c34\u533a2', u'description': u'\u6d4b\u8bd52\n\uff0a\n\u9996\u620f'}], u'poster': u'http://7x2wk4.com2.z0.glb.qiniucdn.com/FhcMrYIlxhsJTgnjUydOlt20DSKa-roomposter', u'water_room': {u'id': u'5940cfa61893be1a80f8c97d', u'name': u'\u6c34\u533a'}, u'notice': [{u'content': u'\u79ef\u6781\u57fa\u91d1gixicicof', u'_id': u'59e705d71893be0479da73ee', u'type': 0, u'time': 1516870093407L, u'title': u'\u55ef\u55ef'}], u'intro': u'\u670b\u53cb\u5708\u662f\u6700\u53e4\u8001\u7684\u5927\u9646\uff0c\u4e5f\u662f\u6700\u7e41\u534e\u6700\u81ea\u7531\u7684\u5927\u9646\u3002\u8fd9\u91cc\u6b22\u8fce\u6765\u81ea\u4e0d\u540c\u6b21\u5143\u4e0d\u540c\u79cd\u65cf\u4e0d\u540c\u4e16\u754c\u7684\u4eba\u4eec\u3002\u6765\u5230\u8fd9\u5c31\u8bf7\u4e0d\u8981\u505c\u4e0b\u811a\u6b65\uff0c\u60f3\u8981\u5728\u8fd9\u91cc\u751f\u5b58\uff0c\u4f60\u5c31\u5f97\u5b66\u4f1a\u8fd0\u7528\u6587\u5b57\u6f14\u7ece\uff0c\u8ba9\u81ea\u5df1\u6210\u4e3a\u90a3\u4e2a\u540d\u4eba\uff0c\u53bb\u4f53\u9a8c\u4e0d\u4e00\u6837\u7684\u7ecf\u5386\uff01\u51c6\u5907\u597d\u4e86\u5417\uff1f3\uff0c2\uff0c1\uff0c\u5f00\u59cb\u7a7f\u8d8a\u2026\u2026', u'headimg': u'http://7x2wk4.com2.z0.glb.qiniucdn.com/FuVbExdjhcjNoIljD5vC6gCVvftd-head', u'top_room': {u'id': u'56cc14fa1893be26cd593941', u'name': u'\u5c0f\u72d7'}, u'friendcircle': False, u'_id': u'551e51f8fbe78e6c02be1d89', u'options': {u'user_open': True, u'makefriend': True, u'feedphoto': True, u'admin_apply': True, u'user_apply': True, u'newer_create_feed': False}, u'ban_emotion': True, u'name': u'\u704c\u6c34\u4e13\u533a'}, u'friendunread': 0, u'msgunread': {u'count': 7, u'headimg': u'http://images.qudao.com/others/2012-04-18/1334716408.jpg'}, u'items': [{u'liked': False, u'likeusers': [], u'play': {u'feed': {u'_id': u'5aaa31931893be6a5705717d'}, u'count': 1, u'default': True, u'user': {u'name': u'\u9e7f\u6657', u'no': 677, u'verify': False, u'headimg': u'http://7x2wk4.com2.z0.glb.qiniucdn.com/FhHjt76Cu1et6SsJv1gy1031cyBz-head', u'device': {u'_id': u'5a4c4f4c1893be6e03063101'}, u'_id': u'5506de6efbe78e7de77976cb', u'original': False}, u'time': {u'create': 1521103251353L, u'play': 1521103251353L}, u'device': {u'_id': u'5a4c4f4c1893be6e03063101'}, u'_id': u'5aaa31931893be6a5705717e'}, u'vote': {u'status': 0, u'score': 0, u'up': 0}, u'best': False, u'copyright': False, u'no': 677, u'top': 0, u'comments': [], u'content': u'\u6211', u'room_admin': False, u'_cache_time': 1521105274044L, u'isdeleted': False, u'stat': {u'comment': 0, u'like': 0}, u'member_top': 0, u'user': {u'me': True, u'name': u'\u9e7f\u6657', u'beginner': False, u'no': 677, u'admin': False, u'verify': False, u'admin_type': 0, u'headimg': u'http://7x2wk4.com2.z0.glb.qiniucdn.com/FhHjt76Cu1et6SsJv1gy1031cyBz-head', u'device': {u'_id': u'5a4c4f4c1893be6e03063101'}, u'_id': u'5506de6efbe78e7de77976cb', u'original': False}, u'device': {u'_id': u'5a4c4f4c1893be6e03063101'}, u'room': {u'friendcircle': False, u'short': u'\u539f\u670b\u53cb\u5708', u'name': u'\u539f\u670b\u53cb\u5708', u'ban_emotion': True, u'_id': u'551e51f8fbe78e6c02be1d89'}, u'hot_entry': False, u'time': {u'create': 1521103251332L}, u'model': 0, u'_id': u'5aaa31931893be6a5705717d', u'sub_top': 0}, {u'liked': False, u'likeusers': [], u'vote': {u'status': 0, u'score': 0, u'up': 0}, u'best': False, u'copyright': False, u'no': 447, u'top': 0, u'comments': [], u'content': u'', u'room_admin': False, u'_cache_time': 1521105274050L, u'isdeleted': False, u'stat': {u'comment': 0, u'like': 0}, u'photos': [{u'large': u'http://qiniu.mrpyq.com/0ddeff74b80647d23882c74cd7b2253a-large', u'width': 161, u'type': 0, u'thumbnail': u'http://qiniu.mrpyq.com/0ddeff74b80647d23882c74cd7b2253a-thumbnail', u'height': 242}, {u'large': u'http://qiniu.mrpyq.com/5bfadf8c0d4c786974822eec75885618-large', u'width': 161, u'type': 0, u'thumbnail': u'http://qiniu.mrpyq.com/5bfadf8c0d4c786974822eec75885618-thumbnail', u'height': 243}, {u'large': u'http://qiniu.mrpyq.com/22db5f08784134eb591dc336fab5bf0d-large', u'width': 161, u'type': 0, u'thumbnail': u'http://qiniu.mrpyq.com/22db5f08784134eb591dc336fab5bf0d-thumbnail', u'height': 243}, {u'large': u'http://qiniu.mrpyq.com/9e7b15f8ffd1569362778c0796cff243-large', u'width': 161, u'type': 0, u'thumbnail': u'http://qiniu.mrpyq.com/9e7b15f8ffd1569362778c0796cff243-thumbnail', u'height': 242}, {u'large': u'http://qiniu.mrpyq.com/02e8b81b419173956f752abd6df3d886-large', u'width': 161, u'type': 0, u'thumbnail': u'http://qiniu.mrpyq.com/02e8b81b419173956f752abd6df3d886-thumbnail', u'height': 107}], u'user': {u'me': False, u'name': u'\u7504\u5b1b', u'beginner': True, u'no': 447, u'admin': False, u'verify': False, u'admin_type': 0, u'headimg': u'http://7x2wk4.com2.z0.glb.qiniucdn.com/FgjaZsFF2pGpNW00glGm3zxPm6DQ-head', u'device': {u'_id': u'5aa77d901893be24e3b4012d'}, u'_id': u'5510cd06fbe78e1ec58c2210', u'original': False}, u'device': {u'_id': u'5aa77d901893be24e3b4012d'}, u'room': {u'friendcircle': False, u'short': u'\u539f\u670b\u53cb\u5708', u'name': u'\u539f\u670b\u53cb\u5708', u'ban_emotion': True, u'_id': u'551e51f8fbe78e6c02be1d89'}, u'hot_entry': False, u'time': {u'create': 1521098339981L}, u'model': 0, u'_id': u'5aaa1e631893be6a5705714b', u'sub_top': 0}, {u'liked': False, u'room': {u'friendcircle': False, u'short': u'\u539f\u670b\u53cb\u5708', u'name': u'\u539f\u670b\u53cb\u5708', u'ban_emotion': True, u'_id': u'551e51f8fbe78e6c02be1d89'}, u'copyright': False, u'no': 515, u'best': False, u'vote': {u'status': 0, u'score': 1, u'up': 1}, u'likeusers': [{u'me': False, u'name': u'angelababy', u'no': 1635, u'verify': False, u'headimg': u'http://7x2wk4.com2.z0.glb.qiniucdn.com/FgqLWSrUSg8pcsWKVsgx5iyyd9jy-head', u'device': {u'_id': u'585baf236e998f7a2a5387f5'}, u'_id': u'550be3c5fbe78e635400fbeb', u'original': False}, {u'me': False, u'name': u'\u6c6a\u5cf0', u'no': 108, u'verify': False, u'headimg': u'http://7x2wk4.com2.z0.glb.qiniucdn.com/Fgw_kibvm8fqzd1YJNCXSCleWODf-head', u'device': {u'_id': u'5a9926901893be43129bb17c'}, u'_id': u'5507cbb8fbe78e0f9681e986', u'original': False}, {u'me': False, u'name': u'\u846b\u82a6\u5a03', u'no': 515, u'verify': False, u'headimg': u'http://7x2wk4.com2.z0.glb.qiniucdn.com/Ft0Aau50xi37nZ3can2rID2jpiCk-head', u'device': {u'_id': u'5a7eaf191893be09caf2cdda'}, u'_id': u'550c1d7bfbe78e19d5f85fda', u'original': False}], u'stat': {u'comment': 1, u'like': 3, u'up': 1}, u'comments': [{u'content': u'\u53f2\u4e0a\u6700', u'_id': u'5aa9ef301893be2f7d848ad1', u'b': 0, u'user': {u'me': False, u'name': u'\u6c6a\u5cf0', u'no': 108, u'verify': False, u'headimg': u'http://7x2wk4.com2.z0.glb.qiniucdn.com/Fgw_kibvm8fqzd1YJNCXSCleWODf-head', u'device': {u'_id': u'5a9926901893be43129bb17c'}, u'_id': u'5507cbb8fbe78e0f9681e986', u'original': False}, u'time': {u'create': 1521086256822L}}], u'content': u'\u904e\u4f86\u770b\u770b\u8def', u'hot_entry': False, u'room_admin': False, u'user': {u'me': False, u'name': u'\u846b\u82a6\u5a03', u'beginner': False, u'no': 515, u'admin': False, u'verify': False, u'admin_type': 0, u'headimg': u'http://7x2wk4.com2.z0.glb.qiniucdn.com/Ft0Aau50xi37nZ3can2rID2jpiCk-head', u'device': {u'_id': u'5a7eaf191893be09caf2cdda'}, u'_id': u'550c1d7bfbe78e19d5f85fda', u'original': False}, u'_cache_time': 1521105274068L, u'time': {u'create': 1521082688491L}, u'device': {u'_id': u'5a7eaf191893be09caf2cdda'}, u'model': 0, u'_id': u'5aa9e1401893be2f7d848aa3', u'top': 0, u'isdeleted': False, u'sub_top': 0}, {u'liked': False, u'room': {u'friendcircle': False, u'short': u'\u539f\u670b\u53cb\u5708', u'name': u'\u539f\u670b\u53cb\u5708', u'ban_emotion': True, u'_id': u'551e51f8fbe78e6c02be1d89'}, u'copyright': False, u'no': 38, u'best': False, u'vote': {u'status': 0, u'score': 1, u'up': 1}, u'likeusers': [{u'me': False, u'name': u'\u6c6a\u5cf0', u'no': 108, u'verify': False, u'headimg': u'http://7x2wk4.com2.z0.glb.qiniucdn.com/Fgw_kibvm8fqzd1YJNCXSCleWODf-head', u'device': {u'_id': u'5a9926901893be43129bb17c'}, u'_id': u'5507cbb8fbe78e0f9681e986', u'original': False}], u'stat': {u'comment': 2, u'like': 1, u'up': 1}, u'comments': [{u'content': u'\u628a\u4f60\u5bc6\u7801', u'_id': u'5aa9ed601893be2f7e16dd2f', u'b': 0, u'user': {u'me': False, u'name': u'\u6c6a\u5cf0', u'no': 108, u'verify': False, u'headimg': u'http://7x2wk4.com2.z0.glb.qiniucdn.com/Fgw_kibvm8fqzd1YJNCXSCleWODf-head', u'device': {u'_id': u'5a9926901893be43129bb17c'}, u'_id': u'5507cbb8fbe78e0f9681e986', u'original': False}, u'time': {u'create': 1521085792773L}}, {u'content': u'\u5065\u5065\u5eb7\u5eb7', u'_id': u'5aa9ed6b1893be2f7e16dd31', u'b': 0, u'user': {u'me': False, u'name': u'\u6c6a\u5cf0', u'no': 108, u'verify': False, u'headimg': u'http://7x2wk4.com2.z0.glb.qiniucdn.com/Fgw_kibvm8fqzd1YJNCXSCleWODf-head', u'device': {u'_id': u'5a9926901893be43129bb17c'}, u'_id': u'5507cbb8fbe78e0f9681e986', u'original': False}, u'time': {u'create': 1521085803050L}}], u'content': u'\u6fc0\u60c5', u'hot_entry': False, u'room_admin': False, u'user': {u'me': False, u'name': u'\u846b\u82a6\u5a03', u'beginner': False, u'no': 38, u'admin': False, u'verify': False, u'admin_type': 0, u'headimg': u'http://7x2wk4.com2.z0.glb.qiniucdn.com/Fk3VITCyPtMl_TOtcY-qJbL5pWoD-head', u'device': {u'_id': u'550410c1fbe78e5649c886f6'}, u'_id': u'550c1d7bfbe78e19d5f85fda', u'original': False}, u'_cache_time': 1521105274084L, u'time': {u'create': 1521079417846L}, u'device': {u'_id': u'550410c1fbe78e5649c886f6'}, u'model': 0, u'_id': u'5aa9d4795b5eac0a3af97fb8', u'top': 0, u'isdeleted': False, u'sub_top': 0}, {u'liked': False, u'room': {u'friendcircle': False, u'short': u'\u539f\u670b\u53cb\u5708', u'name': u'\u539f\u670b\u53cb\u5708', u'ban_emotion': True, u'_id': u'551e51f8fbe78e6c02be1d89'}, u'copyright': False, u'no': 45, u'best': False, u'vote': {u'status': 0, u'score': 1, u'up': 1}, u'likeusers': [], u'stat': {u'comment': 0, u'like': 0, u'up': 1}, u'comments': [], u'content': u'\u9f99\u603b', u'hot_entry': False, u'room_admin': True, u'user': {u'me': False, u'name': u'\u7d2b\u971e\u4ed9\u5b50', u'beginner': False, u'no': 45, u'admin': True, u'verify': True, u'admin_type': 90, u'headimg': u'http://7x2wk4.com2.z0.glb.qiniucdn.com/FqPWCnebAZ4krxVpwfbdJRYyHLnS-head', u'device': {u'_id': u'550410c1fbe78e5649c886f6'}, u'_id': u'552e6d4efbe78e48f92f03bb', u'original': False}, u'_cache_time': 1521105274097L, u'time': {u'create': 1520931644445L}, u'device': {u'_id': u'550410c1fbe78e5649c886f6'}, u'model': 0, u'_id': u'5aa7933c1893be24ee53b273', u'top': 0, u'isdeleted': False, u'sub_top': 0}, {u'liked': False, u'likeusers': [], u'stat': {u'comment': 0, u'report': 1, u'like': 0, u'up': 0}, u'vote': {u'status': 0, u'score': 0, u'up': 0}, u'_cache_time': 1521105274105L, u'copyright': False, u'no': 248, u'top': 0, u'comments': [], u'content': u'\u70ed\u5c14\u592b\u5987', u'room_admin': True, u'best': False, u'isdeleted': False, u'play': {u'feed': {u'_id': u'5aa37c8d1893be2cbde74b00'}, u'count': 1, u'default': True, u'user': {u'name': u'\u8499\u5947\xb7D\xb7\u8def\u98de', u'no': 248, u'verify': False, u'headimg': u'http://7x2wk4.com2.z0.glb.qiniucdn.com/FpjgewHytZ8AkH4vswOAVDbUPzGp-head', u'device': {u'_id': u'5a4c4f4c1893be6e03063101'}, u'_id': u'550d6af6fbe78e1ec58b95ca', u'original': False}, u'time': {u'create': 1520663693359L, u'play': 1520663693359L}, u'device': {u'_id': u'5a4c4f4c1893be6e03063101'}, u'_id': u'5aa37c8d1893be2cbde74b01'}, u'member_top': 0, u'user': {u'me': True, u'name': u'\u8499\u5947\xb7D\xb7\u8def\u98de', u'beginner': False, u'no': 248, u'admin': True, u'verify': False, u'admin_type': 90, u'headimg': u'http://7x2wk4.com2.z0.glb.qiniucdn.com/FpjgewHytZ8AkH4vswOAVDbUPzGp-head', u'device': {u'_id': u'5a4c4f4c1893be6e03063101'}, u'_id': u'550d6af6fbe78e1ec58b95ca', u'original': False}, u'device': {u'_id': u'5a4c4f4c1893be6e03063101'}, u'room': {u'friendcircle': False, u'short': u'\u539f\u670b\u53cb\u5708', u'name': u'\u539f\u670b\u53cb\u5708', u'ban_emotion': True, u'_id': u'551e51f8fbe78e6c02be1d89'}, u'hot_entry': False, u'isreport': False, u'time': {u'report': 1521020828563L, u'create': 1520663693358L}, u'model': 0, u'_id': u'5aa37c8d1893be2cbde74b00', u'sub_top': 0}, {u'liked': False, u'likeusers': [], u'play': {u'feed': {u'_id': u'5aa37c5b1893be2cb8aee8c7'}, u'count': 1, u'default': True, u'user': {u'name': u'\u8499\u5947\xb7D\xb7\u8def\u98de', u'no': 248, u'verify': False, u'headimg': u'http://7x2wk4.com2.z0.glb.qiniucdn.com/FpjgewHytZ8AkH4vswOAVDbUPzGp-head', u'device': {u'_id': u'5a4c4f4c1893be6e03063101'}, u'_id': u'550d6af6fbe78e1ec58b95ca', u'original': False}, u'time': {u'create': 1520663643988L, u'play': 1520663643988L}, u'device': {u'_id': u'5a4c4f4c1893be6e03063101'}, u'_id': u'5aa37c5b1893be2cb8aee8c8'}, u'vote': {u'status': 0, u'score': 0, u'up': 0}, u'best': False, u'copyright': False, u'no': 248, u'top': 0, u'comments': [], u'content': u'\u6015\u4e86DJ\u4e86', u'room_admin': True, u'_cache_time': 1521105274113L, u'isdeleted': False, u'stat': {u'comment': 0, u'like': 0, u'up': 0}, u'member_top': 0, u'user': {u'me': True, u'name': u'\u8499\u5947\xb7D\xb7\u8def\u98de', u'beginner': False, u'no': 248, u'admin': True, u'verify': False, u'admin_type': 90, u'headimg': u'http://7x2wk4.com2.z0.glb.qiniucdn.com/FpjgewHytZ8AkH4vswOAVDbUPzGp-head', u'device': {u'_id': u'5a4c4f4c1893be6e03063101'}, u'_id': u'550d6af6fbe78e1ec58b95ca', u'original': False}, u'device': {u'_id': u'5a4c4f4c1893be6e03063101'}, u'room': {u'friendcircle': False, u'short': u'\u539f\u670b\u53cb\u5708', u'name': u'\u539f\u670b\u53cb\u5708', u'ban_emotion': True, u'_id': u'551e51f8fbe78e6c02be1d89'}, u'hot_entry': False, u'time': {u'create': 1520663643986L}, u'model': 0, u'_id': u'5aa37c5b1893be2cb8aee8c7', u'sub_top': 0}, {u'liked': False, u'likeusers': [], u'vote': {u'status': 0, u'score': 0, u'up': 0}, u'best': False, u'copyright': False, u'no': 45, u'top': 0, u'comments': [], u'content': u'\u5feb\u4e50\u65c5\u9014', u'room_admin': True, u'_cache_time': 1521105274123L, u'isdeleted': False, u'location': {u'_id': u'5aa103d2f2b358e2db24d105', u'name': u'\u91d1\u878d\u6e2f'}, u'stat': {u'comment': 0, u'like': 0}, u'sub_top': 0, u'device': {u'_id': u'550410c1fbe78e5649c886f6'}, u'room': {u'friendcircle': False, u'short': u'\u539f\u670b\u53cb\u5708', u'name': u'\u539f\u670b\u53cb\u5708', u'ban_emotion': True, u'_id': u'551e51f8fbe78e6c02be1d89'}, u'hot_entry': False, u'time': {u'create': 1520501939420L}, u'model': 0, u'_id': u'5aa104b31893be54a9cb197f', u'user': {u'me': False, u'name': u'\u7d2b\u971e\u4ed9\u5b50', u'beginner': False, u'no': 45, u'admin': True, u'verify': True, u'admin_type': 90, u'headimg': u'http://7x2wk4.com2.z0.glb.qiniucdn.com/FqPWCnebAZ4krxVpwfbdJRYyHLnS-head', u'device': {u'_id': u'550410c1fbe78e5649c886f6'}, u'_id': u'552e6d4efbe78e48f92f03bb', u'original': False}}, {u'liked': False, u'room': {u'friendcircle': False, u'short': u'\u539f\u670b\u53cb\u5708', u'name': u'\u539f\u670b\u53cb\u5708', u'ban_emotion': True, u'_id': u'551e51f8fbe78e6c02be1d89'}, u'copyright': False, u'no': 1655, u'best': False, u'vote': {u'status': 0, u'score': 0, u'up': 0}, u'likeusers': [{u'me': False, u'name': u'\u9093\u8d85', u'no': 949, u'verify': False, u'headimg': u'http://7x2wk4.com2.z0.glb.qiniucdn.com/FhpM2qwOCbTUDDvV4YMf99mjQFzt-head', u'device': {u'_id': u'58ec497d1893be2bcc3ca389'}, u'_id': u'55079785fbe78e632112d25f', u'original': False}], u'stat': {u'comment': 0, u'like': 1}, u'comments': [], u'content': u'Hh', u'hot_entry': False, u'room_admin': True, u'user': {u'me': False, u'name': u'angelababy', u'beginner': False, u'no': 1655, u'admin': True, u'verify': False, u'admin_type': 90, u'headimg': u'http://7x2wk4.com2.z0.glb.qiniucdn.com/FgPiickM6eYMgtwmwmD20BBXsIV8-head', u'device': {u'_id': u'58c0b4b71893be6ae5a47892'}, u'_id': u'550be3c5fbe78e635400fbeb', u'original': False}, u'_cache_time': 1521105274133L, u'time': {u'create': 1520480616671L}, u'device': {u'_id': u'58c0b4b71893be6ae5a47892'}, u'model': 0, u'_id': u'5aa0b1681893be48df6593ab', u'top': 0, u'isdeleted': False, u'sub_top': 0}, {u'liked': False, u'room': {u'friendcircle': False, u'short': u'\u539f\u670b\u53cb\u5708', u'name': u'\u539f\u670b\u53cb\u5708', u'ban_emotion': True, u'_id': u'551e51f8fbe78e6c02be1d89'}, u'copyright': False, u'no': 566, u'best': False, u'vote': {u'status': 0, u'score': 1, u'up': 1}, u'likeusers': [], u'stat': {u'comment': 0, u'like': 0, u'up': 1}, u'comments': [], u'content': u'bbh', u'hot_entry': False, u'room_admin': False, u'user': {u'me': False, u'name': u'\u53f6\u4fee', u'beginner': False, u'no': 566, u'admin': False, u'verify': False, u'admin_type': 0, u'headimg': u'http://7x2wk4.com2.z0.glb.qiniucdn.com/Fvpg236kTCcC-C2pT6T3KuRODsCE-head', u'device': {u'_id': u'59e5be191893be5f5994aae3'}, u'_id': u'551e2e5efbe78e6ec27b4dec', u'original': False}, u'_cache_time': 1521105274142L, u'time': {u'create': 1520479247562L}, u'device': {u'_id': u'59e5be191893be5f5994aae3'}, u'model': 0, u'_id': u'5aa0ac0f1893be1c7e7c531f', u'top': 0, u'isdeleted': False, u'sub_top': 0}]}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>home_TestCase.testQuick_list.Qucik_listTestCase</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',2)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_a_quicl_list: 首页点击切换专区</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        pass</a>
+
+    <div id='div_pt2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.1: [2018-03-15 17:14:38,022] - logger.py] - INFO: 
+{u'follows': [{u'friendcircle': True, u'current': False, u'_id': u'100000000000000000000000', u'name': u'\u597d\u53cb\u5708'}, {u'current': False, u'_id': u'576c9bd4a508c951c73aed75', u'headimg': u'http://7x2wk4.com2.z0.glb.qiniucdn.com/FhfVcMQAhYbbV6F_w-2vUOMZkqT9-head', u'name': u'\u738b\u8005\u8363\u8000', u'short': u'\u738b\u8005\u8363\u8000'}, {u'short': None, u'name': u'\u8dd1\u7537\u4e13\u533a', u'current': False, u'friendcircle': False, u'_id': u'55cb0d86fbe78e7636fcc21d', u'ban_emotion': False}, {u'short': None, u'name': u'\u56fd\u5a31\u4e13\u533a', u'current': False, u'friendcircle': False, u'_id': u'559750e1fbe78e25f5b65f86', u'ban_emotion': False}, {u'short': None, u'name': u'\u5e05\u6c14\u7684\u4eba\u7684\u4e13\u533a', u'current': False, u'friendcircle': False, u'_id': u'5a6b07a1f2b358e2db24080a', u'ban_emotion': False}, {u'current': False, u'_id': u'5748184da508c92e25060df7', u'headimg': u'http://7x2wk4.com2.z0.glb.qiniucdn.com/Fqud665W3mgbHNaSgi200ckzisJN-head', u'name': u'\u96f6\u98df\u4e13\u533a', u'short': u'\u96f6\u98df\u4e13\u533a'}, {u'short': None, u'name': u'\u5168\u804c\u9ad8\u624b', u'current': False, u'friendcircle': False, u'_id': u'55222286fbe78e332e936c1b', u'ban_emotion': False}, {u'short': None, u'name': u'\u8bedC\u5708', u'current': False, u'friendcircle': False, u'_id': u'551facb3fbe78e24b1ec5303', u'ban_emotion': False}, {u'current': False, u'_id': u'561deafdfbe78e5f930186df', u'headimg': u'http://7x2wk4.com2.z0.glb.qiniucdn.com/FkwkqPuIDJwgeXs0MYi8UaDcf2FB-head', u'name': u'\u7405\u740a\u699c'}, {u'short': u'\u5f71\u89c6', u'name': u'\u5f71\u89c6\u4e13\u533a', u'current': False, u'friendcircle': False, u'_id': u'55cc25b0fbe78e0fe20d33e4', u'ban_emotion': False}, {u'short': None, u'name': u'\u5251\u7f51\u4e09\u4e13\u533a', u'current': False, u'friendcircle': False, u'_id': u'552bd989fbe78e6853e442b8', u'ban_emotion': False}, {u'short': None, u'name': u'\u56fd\u6f2b\u4e13\u533a', u'current': False, u'friendcircle': False, u'_id': u'55600ffffbe78e0dfb76f6ed', u'ban_emotion': False}, {u'short': None, u'name': u'\u6e38\u620f\u4e13\u533a', u'current': False, u'friendcircle': False, u'_id': u'55a8ba62fbe78e0577201b2e', u'ban_emotion': False}, {u'current': False, u'_id': u'59cdf276a508c9412e227953', u'headimg': u'http://7x2wk4.com2.z0.glb.qiniucdn.com/FhRdWhjkyym31sMAXDHydbmqbMPQ-head', u'name': u'\u4e09\u56fd\u4e13\u533a', u'short': u'\u4e09\u56fd\u4e13\u533a'}, {u'short': None, u'name': u'\u76d7\u5893\u7b14\u8bb0', u'current': False, u'friendcircle': False, u'_id': u'5560107cfbe78e0dfb76f6ee', u'ban_emotion': False}, {u'short': None, u'name': u'\u5c0f\u8bf4\u4e13\u533a', u'current': False, u'friendcircle': False, u'_id': u'55a4d5c7fbe78e197f212149', u'ban_emotion': False}, {u'short': u'\u6269\u5217\u4e13\u533a', u'name': u'\u6269\u5217\u4e13\u533a\uff08\u539fCP\u4e13\u533a\uff09', u'current': False, u'friendcircle': False, u'_id': u'555e94fcfbe78e0dfb76f648', u'ban_emotion': False}, {u'short': u'\u65f6\u4e4b\u6b4c', u'name': u'\u65f6\u4e4b\u6b4c', u'current': False, u'friendcircle': False, u'_id': u'556bc4a4ea5e390c404d7248', u'ban_emotion': False}, {u'short': None, u'name': u'\u82b1\u5343\u9aa8', u'current': False, u'friendcircle': False, u'_id': u'5594db0ffbe78e1b182cf2bf', u'ban_emotion': False}, {u'short': None, u'name': u'\u8981\u547d\u7684\u81ea\u62cd\u63a7', u'current': False, u'friendcircle': False, u'_id': u'551918dafbe78e6fd82a1607', u'ban_emotion': False}, {u'short': u'\u8288\u6708\u4f20', u'name': u'\u8288\u6708\u4f20', u'current': False, u'friendcircle': False, u'_id': u'56652c3dfbe78e0df404f0e7', u'ban_emotion': False}, {u'short': None, u'name': u'\u6b66\u4fa0\u4e13\u533a', u'current': False, u'friendcircle': False, u'_id': u'55d42f1ffbe78e4b22fcd2c8', u'ban_emotion': False}, {u'short': None, u'name': u'\u516b\u5366\u4e13\u533a', u'current': False, u'friendcircle': False, u'_id': u'55da8250fbe78e0d446c9c5b', u'ban_emotion': False}, {u'short': None, u'name': u'\u6e2f\u5a31\u4e13\u533a', u'current': False, u'friendcircle': False, u'_id': u'55ecf387fbe78e56a1ced34a', u'ban_emotion': False}, {u'short': None, u'name': u'\u963f\u5c3c\u963f\u8428\u6709', u'current': False, u'friendcircle': False, u'_id': u'5a65a6a8f2b358e2db2402c7', u'ban_emotion': False}, {u'short': u'\u4e8c\u6b21\u5143', u'name': u'\u4e8c\u6b21\u5143\u670b\u53cb\u5708', u'current': False, u'friendcircle': False, u'_id': u'59ffde4ba508c94666bda04f', u'ban_emotion': False}, {u'short': None, u'name': u'\u6b27\u7f8e\u4e13\u533a', u'current': False, u'friendcircle': False, u'_id': u'552b5aecfbe78e6853e442af', u'ban_emotion': False}, {u'short': None, u'name': u'\u54b3\u54b3\u54b3', u'current': False, u'friendcircle': False, u'_id': u'5a6aec1ff2b358e2db2407d7', u'ban_emotion': False}, {u'short': None, u'name': u'\u554a\u554a\u554a', u'current': False, u'friendcircle': False, u'_id': u'5a6aee09f2b358e2db2407eb', u'ban_emotion': False}, {u'short': None, u'name': u'\u6ce1\u6e29\u6cc9\u4e13\u533a', u'current': False, u'friendcircle': False, u'_id': u'5a6af8faf2b358e2db2407fb', u'ban_emotion': False}, {u'short': None, u'name': u'\u8bb2\u6545\u4e8b\u4e13\u533a', u'current': False, u'friendcircle': False, u'_id': u'5a6af0a9f2b358e2db2407f1', u'ban_emotion': False}, {u'short': u'\u539f\u670b\u53cb\u5708', u'name': u'\u704c\u6c34\u4e13\u533a', u'current': True, u'friendcircle': False, u'_id': u'551e51f8fbe78e6c02be1d89', u'ban_emotion': True}], u'hots': [{u'opening_time': u'20:00-7:00', u'_id': u'55de80a3fbe78e0d3d2cf260', u'headimg': u'http://7x2wk4.com2.z0.glb.qiniucdn.com/FuHCrTA-cGiSlfGKcTbMf5DETxPb-head', u'name': u'\u6df1\u591c\u4e13\u533a', u'short': u''}, {u'current': False, u'_id': u'5a430078a508c9395458ebac', u'headimg': u'http://7x2wk4.com2.z0.glb.qiniucdn.com/FvFMQljONaDHJ5-MDmA6kwAONUGH-head', u'name': u'\u604b\u4e0e\u5236\u4f5c\u4eba', u'short': u'\u604b\u4e0e\u5236\u4f5c\u4eba'}]}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_b_friendcircle</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>login_register_TestCase.testLogin.LoginTestCase: 登陆</td>
+    <td>4</td>
+    <td>4</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',4)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testLogin_01: 测试登陆（已注册号码，正确验证码）</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        pass</a>
+
+    <div id='div_pt3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.1: [2018-03-15 17:14:38,282] - logger.py] - INFO: ------æµè¯ç»éï¼å·²æ³¨åå·ç ï¼æ­£ç¡®éªè¯ç ï¼ï¼start!---------
+[2018-03-15 17:14:38,282] - logger.py] - INFO: ------è¾å¥å·²æ³¨åå·ç ï¼18872215422 ,éªè¯ç : 20177 ã
+{"bind_phone": true, "bind_weixin": false, "phone": "18872215422", "bind_device": false, "qquid": null, "xiaomiuid": null, "like_notify": 1, "user": {"me": true, "name": "doge", "no": 537, "verify": false, "description": "doge,\u4ea6\u79f0\u4e3a\u201c\u795e\u70e6\u72d7\u201d\u3001\u201cKABOSU\u9171\u201d\u3002", "level_exp": {"level_exp": 50, "exp": 50, "next_level_exp": 100, "level": 5}, "admins": [], "headimg": "http://7x2wk4.com2.z0.glb.qiniucdn.com/FmxhXHM6uUGYgf9eh6Qlj8LQsnYH-head", "rooms": [], "signature": "", "device": {"_id": "5a4c4f4c1893be6e03063101"}, "_id": "550d6dd5fbe78e1ec58b9767", "type": 0, "original": false, "badges": [], "cosname": "\u54a9\u54a9"}, "bind_xiaomi": false, "bind_sina": false, "password": null, "bind_qq": false, "identity": true, "dnd": false, "room": {"_id": "551e51f8fbe78e6c02be1d89"}, "weixinuid": null, "identity_limit": true, "access_token": "5a4c4f4c1893be6e03063101.1551863678.fd7062630e0eb08eeccd90738b3d6b09", "sinauid": null, "nick": {}, "device": {"_id": "5a4c4f4c1893be6e03063101"}, "phone_areacode": "+86", "expire_in": 1551863678, "options": {"sound": 1, "phone_contact": 1, "notice": 1, "vibration": 1}}
+{u'me': True, u'description': u'doge,\u4ea6\u79f0\u4e3a\u201c\u795e\u70e6\u72d7\u201d\u3001\u201cKABOSU\u9171\u201d\u3002', u'no': 537, u'verify': False, u'level_exp': {u'level': 5, u'next_level_exp': 100, u'exp': 50, u'level_exp': 50}, u'admins': [], u'headimg': u'http://7x2wk4.com2.z0.glb.qiniucdn.com/FmxhXHM6uUGYgf9eh6Qlj8LQsnYH-head', u'rooms': [], u'signature': u'', u'device': {u'_id': u'5a4c4f4c1893be6e03063101'}, u'cosname': u'\u54a9\u54a9', u'_id': u'550d6dd5fbe78e1ec58b9767', u'type': 0, u'original': False, u'badges': [], u'name': u'doge'}
+{u'me': True, u'description': u'doge,\u4ea6\u79f0\u4e3a\u201c\u795e\u70e6\u72d7\u201d\u3001\u201cKABOSU\u9171\u201d\u3002', u'no': 537, u'verify': False, u'level_exp': {u'level': 5, u'next_level_exp': 100, u'exp': 50, u'level_exp': 50}, u'admins': [], u'headimg': u'http://7x2wk4.com2.z0.glb.qiniucdn.com/FmxhXHM6uUGYgf9eh6Qlj8LQsnYH-head', u'rooms': [], u'signature': u'', u'device': {u'_id': u'5a4c4f4c1893be6e03063101'}, u'cosname': u'\u54a9\u54a9', u'_id': u'550d6dd5fbe78e1ec58b9767', u'type': 0, u'original': False, u'badges': [], u'name': u'doge'}
+[2018-03-15 17:14:38,532] - logger.py] - INFO: è·åæµè¯ç»æï¼True
+[2018-03-15 17:14:38,532] - logger.py] - INFO: ----------pass!-------
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testLogin_02: 测试登陆（已注册号码，错误验证码）</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.2')" >
+        pass</a>
+
+    <div id='div_pt3.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.2: [2018-03-15 17:14:38,532] - logger.py] - INFO: ------测试登陆（已注册号码，错误验证码）：start!---------
+[2018-03-15 17:14:38,532] - logger.py] - INFO: ------输入已注册号码：18872215422 ,验证码: 12345 。
+{"error_code": -1, "error": "\u8be5\u624b\u673a\u9a8c\u8bc1\u7801\u4e0d\u6b63\u786e\u6216\u5df2\u4f7f\u7528\u8fc7"}
+该手机验证码不正确或已使用过
+-1
+[2018-03-15 17:14:38,763] - logger.py] - INFO: 获取测试结果：该手机验证码不正确或已使用过
+[2018-03-15 17:14:38,763] - logger.py] - INFO: ----------pass!-------
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testLogin_03: 测试登陆（已注册号码，正确密码）</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.3')" >
+        pass</a>
+
+    <div id='div_pt3.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.3: [2018-03-15 17:14:38,763] - logger.py] - INFO: ------æµè¯ç»éï¼å·²æ³¨åå·ç ï¼æ­£ç¡®å¯ç ï¼ï¼start!---------
+[2018-03-15 17:14:38,763] - logger.py] - INFO: ------è¾å¥å·²æ³¨åå·ç ï¼18872215422 ,æ­£ç¡®å¯ç : 13114328435 ã
+{"bind_phone": true, "bind_weixin": false, "phone": "18872215422", "bind_device": false, "qquid": null, "xiaomiuid": null, "like_notify": 1, "user": {"me": true, "name": "doge", "no": 537, "verify": false, "description": "doge,\u4ea6\u79f0\u4e3a\u201c\u795e\u70e6\u72d7\u201d\u3001\u201cKABOSU\u9171\u201d\u3002", "level_exp": {"level_exp": 50, "exp": 50, "next_level_exp": 100, "level": 5}, "admins": [], "headimg": "http://7x2wk4.com2.z0.glb.qiniucdn.com/FmxhXHM6uUGYgf9eh6Qlj8LQsnYH-head", "rooms": [], "signature": "", "device": {"_id": "5a4c4f4c1893be6e03063101"}, "_id": "550d6dd5fbe78e1ec58b9767", "type": 0, "original": false, "badges": [], "cosname": "\u54a9\u54a9"}, "bind_xiaomi": false, "bind_sina": false, "password": null, "bind_qq": false, "identity": true, "dnd": false, "room": {"_id": "551e51f8fbe78e6c02be1d89"}, "weixinuid": null, "identity_limit": true, "access_token": "5a4c4f4c1893be6e03063101.1551863679.87f867b9360b3899040364b7be89a64b", "sinauid": null, "nick": {}, "device": {"_id": "5a4c4f4c1893be6e03063101"}, "phone_areacode": "+86", "expire_in": 1551863679, "options": {"sound": 1, "phone_contact": 1, "notice": 1, "vibration": 1}}
+{u'me': True, u'description': u'doge,\u4ea6\u79f0\u4e3a\u201c\u795e\u70e6\u72d7\u201d\u3001\u201cKABOSU\u9171\u201d\u3002', u'no': 537, u'verify': False, u'level_exp': {u'level': 5, u'next_level_exp': 100, u'exp': 50, u'level_exp': 50}, u'admins': [], u'headimg': u'http://7x2wk4.com2.z0.glb.qiniucdn.com/FmxhXHM6uUGYgf9eh6Qlj8LQsnYH-head', u'rooms': [], u'signature': u'', u'device': {u'_id': u'5a4c4f4c1893be6e03063101'}, u'cosname': u'\u54a9\u54a9', u'_id': u'550d6dd5fbe78e1ec58b9767', u'type': 0, u'original': False, u'badges': [], u'name': u'doge'}
+[2018-03-15 17:14:39,013] - logger.py] - INFO: è·åæµè¯ç»æï¼user{me:} = True
+[2018-03-15 17:14:39,013] - logger.py] - INFO: ----------pass!-------
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testLogin_04: 测试登陆（已注册号码，错误密码）</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.4')" >
+        pass</a>
+
+    <div id='div_pt3.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.4: [2018-03-15 17:14:39,013] - logger.py] - INFO: ------测试登陆（已注册号码，错误密码）：start!---------
+[2018-03-15 17:14:39,013] - logger.py] - INFO: ------输入已注册号码：18872215422 ,错误密码: 13114328433 。
+{"error_code": -1, "error": "\u60a8\u7684\u624b\u673a\u53f7\u6216\u5bc6\u7801\u4e0d\u6b63\u786e"}
+您的手机号或密码不正确
+-1
+[2018-03-15 17:14:39,253] - logger.py] - INFO: 获取测试结果：error = 您的手机号或密码不正确,error_code = -1
+[2018-03-15 17:14:39,253] - logger.py] - INFO: ----------pass!-------
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>login_register_TestCase.testRegister.RegisterTestCase: 注册</td>
+    <td>5</td>
+    <td>5</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',5)">Detail</a></td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testRegister_01: 测试注册（已注册号码，正确验证码）</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+        pass</a>
+
+    <div id='div_pt4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.1: {"error_code": -1, "error": "\u8be5\u624b\u673a\u8d26\u53f7\u5df2\u7ecf\u6ce8\u518c"}
+该手机账号已经注册
+-1
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt4.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testRegister_02: 测试注册（已注册号码，错误验证码）</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.2')" >
+        pass</a>
+
+    <div id='div_pt4.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.2: {"error_code": -1, "error": "\u8be5\u624b\u673a\u8d26\u53f7\u5df2\u7ecf\u6ce8\u518c"}
+该手机账号已经注册
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt4.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testRegister_03: 测试注册（未注册号码，正确验证码）</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.3')" >
+        pass</a>
+
+    <div id='div_pt4.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.3: {"error_code": -1, "error": "\u8be5\u624b\u673a\u8d26\u53f7\u5df2\u7ecf\u6ce8\u518c"}
+该手机账号已经注册
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt4.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testRegister_04: 测试注册（未注册号码，万能验证码）</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.4')" >
+        pass</a>
+
+    <div id='div_pt4.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.4: {"error_code": -1, "error": "\u8be5\u624b\u673a\u8d26\u53f7\u5df2\u7ecf\u6ce8\u518c"}
+该手机账号已经注册
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt4.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testRegister_05: 测试注册（未注册号码，错误验证码）</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.5')" >
+        pass</a>
+
+    <div id='div_pt4.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.5: {"error_code": -1, "error": "\u8be5\u624b\u673a\u8d26\u53f7\u5df2\u7ecf\u6ce8\u518c"}
+该手机账号已经注册
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>login_register_TestCase.testVerificationCode.MyTestCase</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',2)">Detail</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_VerificationCode_Login: 免密登陆页面测试获取验证码</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.1')" >
+        pass</a>
+
+    <div id='div_pt5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.1: {"result": 1}
+{u'result': 1}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_VerificationCode_Register: 注册页面测试获取验证码</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.2')" >
+        pass</a>
+
+    <div id='div_pt5.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.2: {"result": 1}
+{u'result': 1}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>14</td>
+    <td>14</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
