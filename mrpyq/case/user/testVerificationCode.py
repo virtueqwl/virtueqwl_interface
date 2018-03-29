@@ -2,7 +2,7 @@
 import unittest, requests
 from common.logger import Log
 
-class MyTestCase(unittest.TestCase):
+class VerificationCodeTestCase(unittest.TestCase):
     '''获取验证码'''
     log = Log()
 
