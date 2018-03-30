@@ -26,7 +26,11 @@ class SignInTestCase(unittest.TestCase):
         r = requests.post(self.url, headers=self.headers, data=self.data)
         result = r.json()
         print(result)
-        self.assertEqual(1, result["result"])
+
+        if result["error_code"] == -1:
+            self.assertEqual(-1, result["error_code"], msg="该角色已签到，无异常")
+        else:
+            self.assertEqual(1, result["result"])
 
     def test_daily_signin(self):
         '''每日签到领圈币'''

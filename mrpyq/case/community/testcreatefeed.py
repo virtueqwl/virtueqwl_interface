@@ -41,7 +41,7 @@ class CreateFeedTestCase(unittest.TestCase):
         feed = result["feed"]
         print(feed)
         print(feed["liked"])
-        self.assertEqual("False", feed["liked"])
+        self.assertEqual(False, feed["liked"])
 
 
 if __name__ == '__main__':
